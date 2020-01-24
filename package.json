@@ -1,6 +1,6 @@
 {
   "name": "steplix-http-exception",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Steplix Http Exception",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,11 @@
   "bugs": {
     "url": "https://github.com/steplix/SteplixHttpException/issues"
   },
+  "keywords": [
+    "error",
+    "exception",
+    "steplix"
+  ],
   "dependencies": {
     "http-constants": "^2.1.0-5-g4553f07"
   },
