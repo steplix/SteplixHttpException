@@ -1,0 +1,37 @@
+{
+  "name": "steplix-http-exception",
+  "version": "0.0.1",
+  "description": "Steplix Http Exception",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint core",
+    "lint-fix": "node_modules/.bin/eslint --fix core",
+    "test-app": "NODE_ENV=testing node tests/app",
+    "test": "NODE_ENV=testing mocha --file './tests/setup.js' --reporter spec --recursive tests/**/*.test.js"
+  },
+  "homepage": "https://github.com/steplix/SteplixHttpException#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steplix/SteplixHttpException.git"
+  },
+  "author": "Steplix Developers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steplix/SteplixHttpException/issues"
+  },
+  "dependencies": {
+    "http-constants": "^2.1.0-5-g4553f07"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^6.2.2",
+    "mock-require": "^3.0.3",
+    "supertest": "^4.0.2"
+  }
+}
