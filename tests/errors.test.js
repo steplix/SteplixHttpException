@@ -82,17 +82,4 @@ describe('Errors', () => {
             done();
         });
     });
-
-    describe('GireError', () => {
-        it(`should return code/status ${http.codes.OK}`, done => {
-            const result = new Errors.GireInternalError('Gire Error', { cod_trx: 'ABC123' });
-            expect(result).to.have.property('codigo_respuesta').to.be.a('number').equal(10);
-            expect(result).to.have.property('code').to.be.a('number').equal(http.codes.OK);
-            expect(result).to.have.property('msg').to.be.a('string').equal('Gire Error');
-
-            const json = result.toJson();
-            expect(json).to.have.property('cod_trx').to.be.a('string').equal('ABC123');
-            done();
-        });
-    });
 });

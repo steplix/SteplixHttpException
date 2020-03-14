@@ -1,8 +1,7 @@
 'use strict';
 
-const CustomError = require('./custom');
-const GireError = require('./gire');
 const http = require('http-constants');
+const CustomError = require('./custom');
 
 class Continue extends CustomError {
     constructor (message = 'Continue', extra) {
@@ -507,83 +506,6 @@ class JsonErrorResponse extends CustomError {
     }
 }
 
-class GireDatabaseError extends GireError {
-    constructor (message = 'Error en BD', extra) {
-        super(message, 1, extra);
-    }
-}
-
-class GireDuplicatedKeyError extends GireError {
-    constructor (message = 'Clave duplicada', extra) {
-        super(message, 2, extra);
-    }
-}
-
-class GireAlreadyReversedError extends GireError {
-    constructor (message = 'Transacción ya reversada', extra) {
-        super(message, 3, extra);
-    }
-}
-/**
- * when you want to revers an inexistent transaction
- */
-class GireInexistentPaymentError extends GireError {
-    constructor (message = 'No existe el Pago', extra) {
-        super(message, 4, extra);
-    }
-}
-
-class GireInvalidOperationError extends GireError {
-    constructor (message = 'Operación inválida', extra) {
-        super(message, 5, extra);
-    }
-}
-
-/**
- * Client exists but it has not pendant payment
- */
-class GireNotFoundPaymentError extends GireError {
-    constructor (message = 'No existe registro', extra) {
-        super(message, 6, extra);
-    }
-}
-
-class GireNotFoundClientError extends GireError {
-    constructor (message = 'Cliente no existe', extra) {
-        super(message, 7, extra);
-    }
-}
-
-class GireBadClientCodeError extends GireError {
-    constructor (message = 'Error de validación del código de cliente', extra) {
-        super(message, 8, extra);
-    }
-}
-
-class GireBadRequestError extends GireError {
-    constructor (message = 'Parámetros incorrectos o faltantes', extra) {
-        super(message, 9, extra);
-    }
-}
-
-class GireInternalError extends GireError {
-    constructor (message = 'Error interno de la entidad', extra) {
-        super(message, 10, extra);
-    }
-}
-
-class GireClientNotAllowedError extends GireError {
-    constructor (message = 'Usuario no habilitado para operar', extra) {
-        super(message, 11, extra);
-    }
-}
-
-class GireOutOfScheduleError extends GireError {
-    constructor (message = 'Transacción fuera de horario', extra) {
-        super(message, 13, extra);
-    }
-}
-
 module.exports = {
     Continue,
     SwitchingProtocols,
@@ -668,18 +590,5 @@ module.exports = {
     NetworkReadTimeout,
     NetworkConnectTimeoutError,
     JsonErrorResponse,
-    CustomError,
-    GireAlreadyReversedError,
-    GireBadClientCodeError,
-    GireBadRequestError,
-    GireClientNotAllowedError,
-    GireDatabaseError,
-    GireDuplicatedKeyError,
-    GireInexistentPaymentError,
-    GireInternalError,
-    GireInvalidOperationError,
-    GireOutOfScheduleError,
-    GireNotFoundClientError,
-    GireNotFoundPaymentError,
-    GireError
+    CustomError
 };
